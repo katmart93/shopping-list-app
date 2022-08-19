@@ -1,3 +1,7 @@
 export default function Title() {
-  return <h1>Your Shopping Lists</h1>;
+  return (
+    <div className="title-wrapper">
+      <h1 className="title">Your Shopping Lists</h1>
+    </div>
+  );
 }
