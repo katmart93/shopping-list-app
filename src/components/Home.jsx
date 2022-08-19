@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import ShoppingLists from "./ShoppingLists";
 import AddListButton from "./AddListButton";
 import Title from "./Title";
+import Modal from "./Modal";
 
 export default function Home() {
   const [lists, setLists] = useState([
@@ -25,6 +26,7 @@ export default function Home() {
       <Title />
       <ShoppingLists lists={lists} />
       <AddListButton />
+      <Modal />
     </div>
   );
 }
