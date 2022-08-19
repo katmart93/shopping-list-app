@@ -21,12 +21,14 @@ export default function Home() {
       listItems: ["bananas", "kiwis", "bread", "chips"],
     },
   ]);
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div>
       <Title />
       <ShoppingLists lists={lists} />
-      <AddListButton />
-      <Modal />
+      <AddListButton setShowModal={setShowModal} />
+      {showModal && <Modal />}
     </div>
   );
 }
