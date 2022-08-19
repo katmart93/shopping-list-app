@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 // components
 import ShoppingLists from "./ShoppingLists";
 import AddListButton from "./AddListButton";
+import Title from "./Title";
 
 export default function Home() {
   const [lists, setLists] = useState([
@@ -21,6 +22,7 @@ export default function Home() {
   ]);
   return (
     <div>
+      <Title />
       <ShoppingLists lists={lists} />
       <AddListButton />
     </div>
