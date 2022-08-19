@@ -16,6 +16,7 @@ export default function NewListForm() {
         <input type="text" />
         <button>add</button>
       </label>
+      <button>submit</button>
     </form>
   );
 }
