@@ -1,3 +1,6 @@
+// styles
+import "./Modal.css";
+
 export default function Modal() {
-  return <div>Modal</div>;
+  return <div className="modal-backdrop"></div>;
 }
