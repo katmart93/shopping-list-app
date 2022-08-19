@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 //components
 import Title from "./components/Title";
 import ShoppingLists from "./components/ShoppingLists";
+import AddListButton from "./components/AddListButton";
 // styles
 import "./App.css";
 
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
       <Title />
       <ShoppingLists lists={lists} />
+      <AddListButton />
     </div>
   );
 }
