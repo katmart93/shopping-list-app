@@ -41,6 +41,7 @@ export default function NewListForm({ addList }) {
           type="text"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
+          required
         />
       </label>
       <label>
@@ -49,6 +50,7 @@ export default function NewListForm({ addList }) {
           type="date"
           onChange={(e) => setDate(e.target.value)}
           value={date}
+          required
         />
       </label>
       <label>
