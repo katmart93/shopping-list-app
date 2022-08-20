@@ -1,5 +1,5 @@
 //components
-import Home from "./components/Home";
+import Home from "./pages/Home";
 // styles
 import "./App.css";
 

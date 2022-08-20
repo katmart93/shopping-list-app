@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 // components
-import ShoppingLists from "./ShoppingLists";
-import AddListButton from "./AddListButton";
-import Title from "./Title";
-import Modal from "./Modal";
-import NewListForm from "./NewListForm";
+import ShoppingLists from "../components/ShoppingLists";
+import AddListButton from "../components/AddListButton";
+import Title from "../components/Title";
+import Modal from "../components/Modal";
+import NewListForm from "../components/NewListForm";
 
 export default function Home() {
   // state
