@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-export default function NewListForm() {
+export default function NewListForm({ addList }) {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   console.log(title, date);
@@ -11,6 +12,14 @@ export default function NewListForm() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const list = {
+      title: title,
+      date: date,
+      id: uuidv4(),
+    };
+
+    addList(list);
     resetForm();
   };
 

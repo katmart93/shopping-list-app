@@ -5,11 +5,11 @@ export default function ShoppingLists({ lists }) {
         <div key={list.id}>
           <h2>{list.title}</h2>
           <p>{list.date}</p>
-          <ul>
-            {list.listItems.slice(0, 2).map((listItem) => (
+          {/* <ul>
+            {list.listItems.map((listItem) => (
               <li key={listItem}>{listItem}</li>
             ))}
-          </ul>
+          </ul> */}
           ...
         </div>
       ))}

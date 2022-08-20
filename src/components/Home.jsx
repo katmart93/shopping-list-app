@@ -5,6 +5,7 @@ import ShoppingLists from "./ShoppingLists";
 import AddListButton from "./AddListButton";
 import Title from "./Title";
 import Modal from "./Modal";
+import NewListForm from "./NewListForm";
 
 export default function Home() {
   // state
@@ -24,12 +25,21 @@ export default function Home() {
     },
   ]);
 
+  const addList = (list) => {
+    setLists((prevLists) => [...prevLists, list]);
+    setShowModal(false);
+  };
+
   return (
     <div>
       <Title />
       <ShoppingLists lists={lists} />
       <AddListButton setShowModal={setShowModal} />
-      {showModal && <Modal />}
+      {showModal && (
+        <Modal>
+          <NewListForm addList={addList} />
+        </Modal>
+      )}
     </div>
   );
 }
