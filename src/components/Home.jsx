@@ -7,6 +7,8 @@ import Title from "./Title";
 import Modal from "./Modal";
 
 export default function Home() {
+  // state
+  const [showModal, setShowModal] = useState(false);
   const [lists, setLists] = useState([
     {
       title: "Home",
@@ -21,7 +23,6 @@ export default function Home() {
       listItems: ["bananas", "kiwis", "bread", "chips"],
     },
   ]);
-  const [showModal, setShowModal] = useState(false);
 
   return (
     <div>
