@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 // components
 import ShoppingLists from "../components/ShoppingLists";
@@ -11,39 +10,23 @@ import NewListForm from "../components/NewListForm";
 export default function Home() {
   // state
   const [showModal, setShowModal] = useState(false);
-  const [currentList, setCurrentList] = useState([]);
-  const [lists, setLists] = useState([
-    {
-      title: "Home",
-      date: "05.06.2022",
-      id: uuidv4(),
-      listItems: ["sushi", "carrots", "apples"],
-    },
-    {
-      title: "Grill",
-      date: "2.02.2022",
-      id: uuidv4(),
-      listItems: ["bananas", "kiwis", "bread", "chips"],
-    },
-  ]);
+  const [lists, setLists] = useState(
+    JSON.parse(localStorage.getItem("SHOPPING_LIST")) || []
+  );
 
-  const navigate = useNavigate();
-  console.log(currentList);
+  useEffect(() => {
+    localStorage.setItem("SHOPPING_LIST", JSON.stringify(lists));
+  }, [lists]);
 
   const addList = (list) => {
     setLists((prevLists) => [...prevLists, list]);
     setShowModal(false);
   };
 
-  const showList = (id) => {
-    setCurrentList(lists.filter((currList) => currList.id === id));
-    navigate("/shopping-list");
-  };
-
   return (
     <div>
       <Title />
-      <ShoppingLists lists={lists} showList={showList} />
+      <ShoppingLists lists={lists} />
       <AddListButton setShowModal={setShowModal} />
       {showModal && (
         <Modal>
