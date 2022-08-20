@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 // components
 import ShoppingLists from "../components/ShoppingLists";
@@ -10,6 +11,7 @@ import NewListForm from "../components/NewListForm";
 export default function Home() {
   // state
   const [showModal, setShowModal] = useState(false);
+  const [currentList, setCurrentList] = useState([]);
   const [lists, setLists] = useState([
     {
       title: "Home",
@@ -25,15 +27,23 @@ export default function Home() {
     },
   ]);
 
+  const navigate = useNavigate();
+  console.log(currentList);
+
   const addList = (list) => {
     setLists((prevLists) => [...prevLists, list]);
     setShowModal(false);
   };
 
+  const showList = (id) => {
+    setCurrentList(lists.filter((currList) => currList.id === id));
+    navigate("/shopping-list");
+  };
+
   return (
     <div>
       <Title />
-      <ShoppingLists lists={lists} />
+      <ShoppingLists lists={lists} showList={showList} />
       <AddListButton setShowModal={setShowModal} />
       {showModal && (
         <Modal>

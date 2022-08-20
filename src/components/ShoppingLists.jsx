@@ -1,4 +1,4 @@
-export default function ShoppingLists({ lists }) {
+export default function ShoppingLists({ lists, showList }) {
   return (
     <div>
       {lists.map((list) => (
@@ -11,6 +11,7 @@ export default function ShoppingLists({ lists }) {
             ))}
           </ul>
           ...
+          <button onClick={() => showList(list.id)}>Show</button>
         </div>
       ))}
     </div>
