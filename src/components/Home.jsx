@@ -33,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <div className="home">
+    <div className="home-wrapper">
       <Title />
       <ShoppingLists lists={lists} showList={showList} />
       <AddListButton setShowFormModal={setShowFormModal} />

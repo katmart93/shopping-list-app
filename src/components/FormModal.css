@@ -1,10 +1,10 @@
 .modal-backdrop {
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
+  top: 0;
   left: 0;
   position: fixed;
-  padding-top: 2.5rem;
-  top: 0;
+  padding-top: 3rem;
   width: 100%;
 }
 .modal-wrapper {
