@@ -5,6 +5,7 @@
   left: 0;
   position: fixed;
   padding-top: 3rem;
+  padding-bottom: 8rem;
   width: 100%;
 }
 .modal-wrapper {
@@ -13,12 +14,14 @@
   font-family: "Titillium Web", sans-serif;
   max-width: 310px;
   margin: 0 auto;
-  padding: 2.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   position: relative;
 }
 
 @media screen and (min-width: 1024px) {
   .modal-wrapper {
-    max-width: 740px;
+    max-width: 720px;
+    height: 100%;
   }
 }

@@ -1,5 +1,7 @@
 // components
 import Modal from "./Modal";
+// styles
+import "./ListModal.css";
 
 export default function ListModal({ currentList }) {
   return (
