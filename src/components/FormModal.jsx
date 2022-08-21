@@ -1,10 +1,6 @@
-// styles
-import "./FormModal.css";
+// components
+import Modal from "./Modal";
 
 export default function FormModal({ children }) {
-  return (
-    <div className="modal-backdrop">
-      <div className="modal-wrapper">{children}</div>
-    </div>
-  );
+  return <Modal>{children}</Modal>;
 }
