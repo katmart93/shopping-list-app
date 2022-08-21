@@ -11,7 +11,7 @@ export default function ShoppingLists({ lists, showList }) {
             ))}
           </ul>
           ...
-          <button>Show</button>
+          <button onClick={showList}>Show</button>
         </div>
       ))}
     </div>

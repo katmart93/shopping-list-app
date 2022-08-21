@@ -1,7 +1,7 @@
-export default function AddListButton({ setShowModal }) {
+export default function AddListButton({ setShowFormModal }) {
   return (
     <div>
-      <button onClick={() => setShowModal(true)}>Add Shopping List</button>
+      <button onClick={() => setShowFormModal(true)}>Add Shopping List</button>
     </div>
   );
 }
