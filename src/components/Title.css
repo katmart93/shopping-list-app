@@ -1,8 +1,18 @@
 .title-wrapper {
   padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .title {
   font-family: "Lobster Two", "Times New Roman", Times, serif;
   color: #ad567e;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  position: relative;
+}
+.title::before {
+  content: "";
+  width: 20rem;
+  height: 2px;
+  background-color: #ad567e;
+  position: absolute;
+  top: 5rem;
 }

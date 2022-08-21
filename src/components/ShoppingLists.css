@@ -1,0 +1,40 @@
+.card {
+  background-color: #f1eff0;
+  padding: 2rem;
+  max-width: 20rem;
+  margin: 0 auto 2rem;
+  border: 2px dotted #baaeb3;
+  border-radius: 5px;
+}
+.card h2 {
+  color: #272727;
+  font-size: 2rem;
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+}
+.card p {
+  font-size: 1.5rem;
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.card ul {
+  color: #545454;
+  font-family: "Andika", Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+.card button {
+  background-color: #d68faf;
+  border: none;
+  border-radius: 25px;
+  color: #f4f4f4;
+  font-size: 1.1rem;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.card button:hover {
+  cursor: pointer;
+}
+.card button:active {
+  background-color: #b35982;
+}
