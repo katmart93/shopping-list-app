@@ -35,8 +35,8 @@ export default function Home() {
   return (
     <div className="home-wrapper">
       <Title />
-      <ShoppingLists lists={lists} showList={showList} />
       <AddListButton setShowFormModal={setShowFormModal} />
+      <ShoppingLists lists={lists} showList={showList} />
       {showFormModal && (
         <FormModal>
           <NewListForm addList={addList} />

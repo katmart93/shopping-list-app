@@ -5,12 +5,12 @@
 .title {
   font-family: "Lobster Two", "Times New Roman", Times, serif;
   color: #ad567e;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   position: relative;
 }
 .title::before {
   content: "";
-  width: 20rem;
+  width: 19rem;
   height: 2px;
   background-color: #ad567e;
   position: absolute;
