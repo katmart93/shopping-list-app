@@ -11,10 +11,12 @@ export default function Home() {
   // state
   const [showFormModal, setShowFormModal] = useState(false);
   const [showListModal, setShowListModal] = useState(false);
+  const [currentList, setCurrentList] = useState([]);
   const [lists, setLists] = useState(
     JSON.parse(localStorage.getItem("SHOPPING_LIST")) || []
   );
 
+  console.log(currentList);
   useEffect(() => {
     localStorage.setItem("SHOPPING_LIST", JSON.stringify(lists));
   }, [lists]);
@@ -25,6 +27,7 @@ export default function Home() {
   };
 
   const showList = (id) => {
+    setCurrentList(lists.filter((currList) => currList.id === id));
     setShowListModal(true);
   };
 
