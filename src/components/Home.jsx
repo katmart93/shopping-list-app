@@ -41,7 +41,7 @@ export default function Home() {
           <NewListForm addList={addList} />
         </FormModal>
       )}
-      {showListModal && <ListModal />}
+      {showListModal && <ListModal currentList={currentList} />}
     </div>
   );
 }
