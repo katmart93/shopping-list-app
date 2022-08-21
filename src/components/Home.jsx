@@ -17,6 +17,7 @@ export default function Home() {
   );
 
   console.log(currentList);
+  // effects
   useEffect(() => {
     localStorage.setItem("SHOPPING_LIST", JSON.stringify(lists));
   }, [lists]);
