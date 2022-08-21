@@ -5,7 +5,7 @@ export default function ListModal({ currentList }) {
   return (
     <Modal>
       {currentList.map((list) => (
-        <div key={list.id}>
+        <div key={list.id} className="shopping-list">
           <h2>{list.title}</h2>
           <p>{list.date}</p>
           <ul>
