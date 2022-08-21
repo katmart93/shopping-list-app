@@ -32,7 +32,7 @@
   background-color: #d68faf;
   border: none;
   border-radius: 25px;
-  color: #f4f4f4;
+  color: #fff;
   font-size: 1.1rem;
   padding: 10px;
   text-transform: uppercase;
@@ -43,3 +43,24 @@
 .card button:active {
   background-color: #b35982;
 }
+
+@media screen and (min-width: 1024px) {
+  .shopping-lists-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 75vw;
+  }
+  .card {
+    width: 20rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .shopping-lists-wrapper {
+    max-width: 65vw;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .shopping-lists-wrapper {
+    max-width: 50vw;
+  }
+} ;
