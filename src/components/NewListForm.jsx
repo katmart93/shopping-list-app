@@ -1,17 +1,14 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 // styles
 import "./NewListForm.css";
-// icons
-// icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 export default function NewListForm({ addList }) {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [item, setItem] = useState("");
   const [currItems, setCurrItems] = useState([]);
+  const itemInput = useRef();
   console.log(title, date, item, currItems);
 
   const resetForm = () => {
@@ -37,6 +34,7 @@ export default function NewListForm({ addList }) {
 
     setCurrItems((prevItems) => [...prevItems, item]);
     setItem("");
+    itemInput.current.focus();
   };
 
   return (
@@ -66,12 +64,9 @@ export default function NewListForm({ addList }) {
             type="text"
             onChange={(e) => setItem(e.target.value)}
             value={item}
+            ref={itemInput}
           />
-          <FontAwesomeIcon
-            icon={faCirclePlus}
-            onClick={addItem}
-            className="plus-icon"
-          />
+          <button onClick={addItem}>add</button>
         </div>
       </label>
       <ul>

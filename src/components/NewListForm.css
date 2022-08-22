@@ -19,8 +19,7 @@
   display: flex;
   align-items: center;
 }
-.items .plus-icon {
-  height: 35px;
-  width: 35px;
+.items button {
+  font-size: 1rem;
   margin-left: 5px;
 }
