@@ -3,16 +3,9 @@
   max-width: 300px;
   text-align: right;
 }
-.plus-icon {
-  color: #ad567e;
+.plus-icon-wrapper .plus-icon {
   width: 45px;
   height: 45px;
-}
-.plus-icon:hover {
-  cursor: pointer;
-}
-.plus-icon:active {
-  color: #ae3e77;
 }
 @media screen and (min-width: 1024px) {
   .plus-icon-wrapper {

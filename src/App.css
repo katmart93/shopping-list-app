@@ -12,3 +12,12 @@ ul {
   color: #545454;
   font-family: "Andika", Arial, Helvetica, sans-serif;
 }
+.plus-icon {
+  color: #ad567e;
+}
+.plus-icon:hover {
+  cursor: pointer;
+}
+.plus-icon:active {
+  color: #ae3e77;
+}

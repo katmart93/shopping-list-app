@@ -2,6 +2,10 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 // styles
 import "./NewListForm.css";
+// icons
+// icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 export default function NewListForm({ addList }) {
   const [title, setTitle] = useState("");
@@ -57,14 +61,20 @@ export default function NewListForm({ addList }) {
       </label>
       <label>
         <span>Items:</span>
-        <input
-          type="text"
-          onChange={(e) => setItem(e.target.value)}
-          value={item}
-        />
-        <button onClick={addItem}>add</button>
+        <div className="items">
+          <input
+            type="text"
+            onChange={(e) => setItem(e.target.value)}
+            value={item}
+          />
+          <FontAwesomeIcon
+            icon={faCirclePlus}
+            onClick={addItem}
+            className="plus-icon"
+          />
+        </div>
       </label>
-      <button>submit</button>
+      <button className="submit-btn">submit</button>
     </form>
   );
 }
