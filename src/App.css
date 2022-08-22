@@ -46,13 +46,9 @@ button:active {
 .x-mark-icon {
   width: 30px;
   height: 30px;
-}
-.pen-clip-icon {
-  width: 25px;
-  height: 25px;
+  color: #272727;
 }
 .icon {
-  color: #272727;
   margin-left: 10px;
 }
 .icon:hover {

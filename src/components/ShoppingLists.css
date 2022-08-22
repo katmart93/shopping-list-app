@@ -3,13 +3,13 @@
   margin: 0 auto;
   padding: 2.5rem 0;
 }
-.remove-icon-wrapper {
+.list-icons-wrapper {
   text-align: right;
+  color: #ad567e;
 }
-.remove-icon-wrapper .trash-icon {
+.list-icons-wrapper .list-icon {
   width: 20px;
   height: 20px;
-  color: #ad567e;
 }
 .card {
   background-color: #f4f4f4;

@@ -4,7 +4,7 @@ import ModalWrapper from "./ModalWrapper";
 import "./SingleList.css";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faPenClip } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function SingleList({ currentList, setShowSingleList }) {
   return (
@@ -12,7 +12,6 @@ export default function SingleList({ currentList, setShowSingleList }) {
       {currentList.map((list) => (
         <>
           <div className="options-wrapper">
-            <FontAwesomeIcon icon={faPenClip} className="icon pen-clip-icon" />
             <FontAwesomeIcon
               icon={faXmark}
               onClick={() => setShowSingleList(false)}
