@@ -74,6 +74,11 @@ export default function NewListForm({ addList }) {
           />
         </div>
       </label>
+      <ul>
+        {currItems.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
       <button>submit</button>
     </form>
   );
