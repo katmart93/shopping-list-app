@@ -5,7 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
-export default function ShoppingLists({ lists, showList, removeList }) {
+export default function ShoppingLists({
+  lists,
+  showList,
+  editList,
+  removeList,
+}) {
   return (
     <div className="shopping-lists-wrapper">
       {lists.map((list) => (
@@ -13,6 +18,7 @@ export default function ShoppingLists({ lists, showList, removeList }) {
           <div className="list-icons-wrapper">
             <FontAwesomeIcon
               icon={faPencil}
+              onClick={() => editList(list)}
               className="icon list-icon pen-clip-icon"
             />
             <FontAwesomeIcon
