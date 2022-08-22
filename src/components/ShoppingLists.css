@@ -3,6 +3,14 @@
   margin: 0 auto;
   padding: 2.5rem 0;
 }
+.remove-icon-wrapper {
+  text-align: right;
+}
+.remove-icon-wrapper .trash-icon {
+  width: 20px;
+  height: 20px;
+  color: #ad567e;
+}
 .card {
   background-color: #f4f4f4;
   padding: 2rem;
