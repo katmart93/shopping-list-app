@@ -11,6 +11,10 @@ export default function Home() {
   const [showNewListForm, setShowNewListForm] = useState(false);
   const [showSingleList, setShowSingleList] = useState(false);
   const [currentList, setCurrentList] = useState([]);
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [item, setItem] = useState("");
+  const [currItems, setCurrItems] = useState([]);
   const [lists, setLists] = useState(
     JSON.parse(localStorage.getItem("SHOPPING_LIST")) || []
   );
@@ -21,6 +25,7 @@ export default function Home() {
     localStorage.setItem("SHOPPING_LIST", JSON.stringify(lists));
   }, [lists]);
 
+  // functions
   const addList = (list) => {
     setLists((prevLists) => [...prevLists, list]);
     setShowNewListForm(false);
@@ -30,6 +35,8 @@ export default function Home() {
     setCurrentList(lists.filter((currList) => currList.id === id));
     setShowSingleList(true);
   };
+
+  const editList = (list) => {};
 
   const removeList = (id) => {
     setLists(lists.filter((list) => list.id !== id));
@@ -48,6 +55,14 @@ export default function Home() {
         <NewListForm
           addList={addList}
           setShowNewListForm={setShowNewListForm}
+          title={title}
+          setTitle={setTitle}
+          date={date}
+          setDate={setDate}
+          item={item}
+          setItem={setItem}
+          currItems={currItems}
+          setCurrItems={setCurrItems}
         />
       )}
       {showSingleList && (

@@ -8,11 +8,18 @@ import "./NewListForm.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export default function NewListForm({ addList, setShowNewListForm }) {
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
-  const [item, setItem] = useState("");
-  const [currItems, setCurrItems] = useState([]);
+export default function NewListForm({
+  addList,
+  setShowNewListForm,
+  setTitle,
+  title,
+  date,
+  setDate,
+  item,
+  setItem,
+  currItems,
+  setCurrItems,
+}) {
   const itemInput = useRef();
   console.log(title, date, item, currItems);
 
@@ -71,7 +78,7 @@ export default function NewListForm({ addList, setShowNewListForm }) {
           />
         </label>
         <label>
-          <span>Items:</span>
+          <span>What do you want to buy?</span>
           <div className="items">
             <input
               type="text"
