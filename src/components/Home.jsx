@@ -31,11 +31,19 @@ export default function Home() {
     setShowSingleList(true);
   };
 
+  const removeList = (id) => {
+    setLists(lists.filter((list) => list.id !== id));
+  };
+
   return (
     <div className="home-wrapper">
       <Title />
       <AddListButton setShowNewListForm={setShowNewListForm} />
-      <ShoppingLists lists={lists} showList={showList} />
+      <ShoppingLists
+        lists={lists}
+        showList={showList}
+        removeList={removeList}
+      />
       {showNewListForm && (
         <NewListForm
           addList={addList}

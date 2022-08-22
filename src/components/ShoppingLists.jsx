@@ -4,15 +4,18 @@ import "./ShoppingLists.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
-export default function ShoppingLists({ lists, showList }) {
+export default function ShoppingLists({ lists, showList, removeList }) {
   return (
     <div className="shopping-lists-wrapper">
       {lists.map((list) => (
         <div key={list.id} className="card">
           <div className="remove-icon-wrapper">
-            <FontAwesomeIcon icon={faTrashCan} className="icon trash-icon" />
+            <FontAwesomeIcon
+              icon={faTrashCan}
+              onClick={() => removeList(list.id)}
+              className="icon trash-icon"
+            />
           </div>
-
           <h2>{list.title}</h2>
           <p>{list.date}</p>
           <ul>
