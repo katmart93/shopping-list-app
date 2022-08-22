@@ -20,7 +20,7 @@ export default function Home() {
     JSON.parse(localStorage.getItem("SHOPPING_LIST")) || []
   );
 
-  console.log(currentList);
+  console.log("current list", currentList);
   // saving data in local storage
   useEffect(() => {
     localStorage.setItem("SHOPPING_LIST", JSON.stringify(lists));
@@ -29,7 +29,16 @@ export default function Home() {
   // NewListForm
   const addList = (list) => {
     setLists((prevLists) => [...prevLists, list]);
-    setShowNewListForm(false);
+  };
+
+  const updateList = () => {
+    setLists(
+      lists.map((list) =>
+        list.id === currId
+          ? { title: title, date: date, id: list.id, listItems: currItems }
+          : list
+      )
+    );
   };
 
   const closeForm = () => {
@@ -53,7 +62,8 @@ export default function Home() {
     setCurrItems(list.listItems);
     setCurrId(list.id);
   };
-  console.log("id", currId);
+  console.log("currId", currId, "currItems", currItems);
+
   const removeList = (id) => {
     setLists(lists.filter((list) => list.id !== id));
   };
@@ -77,6 +87,7 @@ export default function Home() {
       {showNewListForm && (
         <NewListForm
           addList={addList}
+          updateList={updateList}
           closeForm={closeForm}
           title={title}
           setTitle={setTitle}
@@ -87,6 +98,8 @@ export default function Home() {
           currItems={currItems}
           setCurrItems={setCurrItems}
           currId={currId}
+          setCurrId={setCurrId}
+          setShowNewListForm={setShowNewListForm}
         />
       )}
       {showSingleList && (

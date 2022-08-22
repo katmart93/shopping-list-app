@@ -10,6 +10,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function NewListForm({
   addList,
+  updateList,
   closeForm,
   setTitle,
   title,
@@ -20,13 +21,17 @@ export default function NewListForm({
   currItems,
   setCurrItems,
   currId,
+  setCurrId,
+  setShowNewListForm,
 }) {
   const itemInput = useRef();
-  console.log(title, date, item, currItems);
+  console.log("from new list form", title, date, item, currItems);
 
   const resetForm = () => {
     setTitle("");
     setDate("");
+    setCurrItems([]);
+    setCurrId(null);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,8 +43,9 @@ export default function NewListForm({
       listItems: currItems,
     };
 
-    addList(list);
+    currId ? updateList() : addList(list);
     resetForm();
+    setShowNewListForm(false);
   };
 
   const addItem = (e) => {
@@ -95,7 +101,7 @@ export default function NewListForm({
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <button>{currId !== null ? "Updae" : "Create"}</button>
+        <button>{currId !== null ? "Update" : "Create"}</button>
       </form>
     </ModalWrapper>
   );
