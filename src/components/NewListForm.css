@@ -1,3 +1,17 @@
+.x-mark-wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: right;
+  padding-bottom: 1rem;
+}
+.x-mark-icon {
+  color: #272727;
+  width: 30px;
+  height: 30px;
+}
+.x-mark-icon:hover {
+  cursor: pointer;
+}
 .new-list-form {
   text-align: left;
   max-width: 75%;
@@ -8,11 +22,12 @@
   font-size: 1.5rem;
 }
 .new-list-form input {
-  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
   display: block;
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 4px;
   width: 100%;
 }
 .items {
