@@ -4,12 +4,12 @@ import ShoppingLists from "./ShoppingLists";
 import AddListButton from "./AddListButton";
 import Title from "./Title";
 import NewListForm from "./NewListForm";
-import ListModal from "./ListModal";
+import SingleList from "./SingleList";
 
 export default function Home() {
   // state
   const [showNewListForm, setShowNewListForm] = useState(false);
-  const [showListModal, setShowListModal] = useState(false);
+  const [showSingleList, setShowSingleList] = useState(false);
   const [currentList, setCurrentList] = useState([]);
   const [lists, setLists] = useState(
     JSON.parse(localStorage.getItem("SHOPPING_LIST")) || []
@@ -28,7 +28,7 @@ export default function Home() {
 
   const showList = (id) => {
     setCurrentList(lists.filter((currList) => currList.id === id));
-    setShowListModal(true);
+    setShowSingleList(true);
   };
 
   return (
@@ -42,7 +42,7 @@ export default function Home() {
           setShowNewListForm={setShowNewListForm}
         />
       )}
-      {showListModal && <ListModal currentList={currentList} />}
+      {showSingleList && <SingleList currentList={currentList} />}
     </div>
   );
 }

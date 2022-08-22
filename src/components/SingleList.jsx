@@ -1,9 +1,9 @@
 // components
 import ModalWrapper from "./ModalWrapper";
 // styles
-import "./ListModal.css";
+import "./SingleList.css";
 
-export default function ListModal({ currentList }) {
+export default function SingleList({ currentList }) {
   return (
     <ModalWrapper>
       {currentList.map((list) => (
