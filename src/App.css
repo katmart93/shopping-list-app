@@ -4,8 +4,11 @@
 }
 h2,
 p {
+  color: #272727;
   font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
 }
 ul {
+  color: #545454;
   font-family: "Andika", Arial, Helvetica, sans-serif;
 }
