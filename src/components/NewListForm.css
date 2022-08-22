@@ -16,6 +16,10 @@
   padding: 4px;
   width: 100%;
 }
+.new-list-form ul {
+  font-size: 1.1rem;
+  padding-bottom: 15px;
+}
 .items {
   display: flex;
   align-items: center;
