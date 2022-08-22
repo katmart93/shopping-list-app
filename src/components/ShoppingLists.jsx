@@ -2,7 +2,7 @@
 import "./ShoppingLists.css";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan, faPenClip } from "@fortawesome/free-regular-svg-icons";
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
 export default function ShoppingLists({ lists, showList, removeList }) {

@@ -12,6 +12,7 @@ ul {
   color: #545454;
   font-family: "Andika", Arial, Helvetica, sans-serif;
 }
+/* plus icon */
 .plus-icon {
   color: #ad567e;
 }
@@ -21,6 +22,7 @@ ul {
 .plus-icon:active {
   color: #ae3e77;
 }
+/* buttons */
 button {
   background-color: #ad567e;
   border: none;
