@@ -1,3 +1,11 @@
+/* global styles */
 .App {
   text-align: center;
+}
+h2,
+p {
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+}
+ul {
+  font-family: "Andika", Arial, Helvetica, sans-serif;
 }

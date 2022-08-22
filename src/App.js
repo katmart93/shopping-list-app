@@ -1,4 +1,3 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 //components
 import Home from "./components/Home";
 // styles
