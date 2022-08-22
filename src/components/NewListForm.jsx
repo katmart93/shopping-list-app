@@ -1,12 +1,14 @@
 import { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
+// components
+import ModalWrapper from "./ModalWrapper";
 // styles
 import "./NewListForm.css";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export default function NewListForm({ addList, setShowFormModal }) {
+export default function NewListForm({ addList, setShowNewListForm }) {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [item, setItem] = useState("");
@@ -41,11 +43,11 @@ export default function NewListForm({ addList, setShowFormModal }) {
   };
 
   return (
-    <>
+    <ModalWrapper>
       <div className="x-mark-wrapper">
         <FontAwesomeIcon
           icon={faXmark}
-          onClick={() => setShowFormModal(false)}
+          onClick={() => setShowNewListForm(false)}
           className="x-mark-icon"
         />
       </div>
@@ -87,6 +89,6 @@ export default function NewListForm({ addList, setShowFormModal }) {
         </ul>
         <button>submit</button>
       </form>
-    </>
+    </ModalWrapper>
   );
 }

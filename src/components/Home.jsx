@@ -3,13 +3,12 @@ import { useEffect, useState } from "react";
 import ShoppingLists from "./ShoppingLists";
 import AddListButton from "./AddListButton";
 import Title from "./Title";
-import FormModal from "./FormModal";
 import NewListForm from "./NewListForm";
 import ListModal from "./ListModal";
 
 export default function Home() {
   // state
-  const [showFormModal, setShowFormModal] = useState(false);
+  const [showNewListForm, setShowNewListForm] = useState(false);
   const [showListModal, setShowListModal] = useState(false);
   const [currentList, setCurrentList] = useState([]);
   const [lists, setLists] = useState(
@@ -24,7 +23,7 @@ export default function Home() {
 
   const addList = (list) => {
     setLists((prevLists) => [...prevLists, list]);
-    setShowFormModal(false);
+    setShowNewListForm(false);
   };
 
   const showList = (id) => {
@@ -35,12 +34,13 @@ export default function Home() {
   return (
     <div className="home-wrapper">
       <Title />
-      <AddListButton setShowFormModal={setShowFormModal} />
+      <AddListButton setShowNewListForm={setShowNewListForm} />
       <ShoppingLists lists={lists} showList={showList} />
-      {showFormModal && (
-        <FormModal>
-          <NewListForm addList={addList} setShowFormModal={setShowFormModal} />
-        </FormModal>
+      {showNewListForm && (
+        <NewListForm
+          addList={addList}
+          setShowNewListForm={setShowNewListForm}
+        />
       )}
       {showListModal && <ListModal currentList={currentList} />}
     </div>
