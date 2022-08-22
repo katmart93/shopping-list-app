@@ -44,7 +44,7 @@ export default function NewListForm({ addList, setShowNewListForm }) {
 
   return (
     <ModalWrapper>
-      <div className="x-mark-wrapper">
+      <div className="options-wrapper">
         <FontAwesomeIcon
           icon={faXmark}
           onClick={() => setShowNewListForm(false)}

@@ -1,17 +1,3 @@
-.x-mark-wrapper {
-  max-width: 90%;
-  margin: 0 auto;
-  text-align: right;
-  padding-bottom: 1rem;
-}
-.x-mark-icon {
-  color: #272727;
-  width: 30px;
-  height: 30px;
-}
-.x-mark-icon:hover {
-  cursor: pointer;
-}
 .new-list-form {
   text-align: left;
   max-width: 75%;
