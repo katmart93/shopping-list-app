@@ -20,26 +20,31 @@ export default function Home() {
   );
 
   console.log(currentList);
-  // effects
+  // saving in local storage
   useEffect(() => {
     localStorage.setItem("SHOPPING_LIST", JSON.stringify(lists));
   }, [lists]);
 
-  // functions
+  // NewListForm
   const addList = (list) => {
     setLists((prevLists) => [...prevLists, list]);
     setShowNewListForm(false);
   };
 
+  // ShoppingLists
   const showList = (id) => {
     setCurrentList(lists.filter((currList) => currList.id === id));
     setShowSingleList(true);
   };
 
-  const editList = (list) => {};
-
   const removeList = (id) => {
     setLists(lists.filter((list) => list.id !== id));
+  };
+
+  // SingleList
+  const closeList = () => {
+    setCurrentList([]);
+    setShowSingleList(false);
   };
 
   return (
@@ -66,10 +71,7 @@ export default function Home() {
         />
       )}
       {showSingleList && (
-        <SingleList
-          currentList={currentList}
-          setShowSingleList={setShowSingleList}
-        />
+        <SingleList currentList={currentList} closeList={closeList} />
       )}
     </div>
   );
