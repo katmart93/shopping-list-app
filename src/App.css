@@ -21,3 +21,18 @@ ul {
 .plus-icon:active {
   color: #ae3e77;
 }
+button {
+  background-color: #ad567e;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 10px;
+  text-transform: uppercase;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  background-color: #ae3e77;
+}

@@ -74,7 +74,7 @@ export default function NewListForm({ addList }) {
           />
         </div>
       </label>
-      <button className="submit-btn">submit</button>
+      <button>submit</button>
     </form>
   );
 }
