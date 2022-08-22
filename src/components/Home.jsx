@@ -13,8 +13,9 @@ export default function Home() {
   const [currentList, setCurrentList] = useState([]);
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
-  const [item, setItem] = useState("");
   const [currItems, setCurrItems] = useState([]);
+  const [currId, setCurrId] = useState(null);
+  const [item, setItem] = useState("");
   const [lists, setLists] = useState(
     JSON.parse(localStorage.getItem("SHOPPING_LIST")) || []
   );
@@ -35,6 +36,7 @@ export default function Home() {
     setTitle("");
     setDate("");
     setCurrItems([]);
+    setCurrId(null);
     setShowNewListForm(false);
   };
 
@@ -49,8 +51,9 @@ export default function Home() {
     setTitle(list.title);
     setDate(list.date);
     setCurrItems(list.listItems);
+    setCurrId(list.id);
   };
-
+  console.log("id", currId);
   const removeList = (id) => {
     setLists(lists.filter((list) => list.id !== id));
   };
@@ -83,6 +86,7 @@ export default function Home() {
           setItem={setItem}
           currItems={currItems}
           setCurrItems={setCurrItems}
+          currId={currId}
         />
       )}
       {showSingleList && (

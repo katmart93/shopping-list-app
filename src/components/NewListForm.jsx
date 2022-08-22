@@ -19,6 +19,7 @@ export default function NewListForm({
   setItem,
   currItems,
   setCurrItems,
+  currId,
 }) {
   const itemInput = useRef();
   console.log(title, date, item, currItems);
@@ -94,7 +95,7 @@ export default function NewListForm({
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <button>submit</button>
+        <button>{currId !== null ? "Updae" : "Create"}</button>
       </form>
     </ModalWrapper>
   );
