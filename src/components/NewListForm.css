@@ -1,0 +1,16 @@
+.new-list-form {
+  text-align: left;
+  max-width: 75%;
+  margin: 0 auto;
+}
+.new-list-form span {
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+.new-list-form input {
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}

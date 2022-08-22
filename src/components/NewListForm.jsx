@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+// styles
+import "./NewListForm.css";
 
 export default function NewListForm({ addList }) {
   const [title, setTitle] = useState("");
