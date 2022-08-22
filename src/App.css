@@ -44,10 +44,17 @@ button:active {
   padding-bottom: 1rem;
 }
 .x-mark-icon {
-  color: #272727;
   width: 30px;
   height: 30px;
 }
-.x-mark-icon:hover {
+.pen-clip-icon {
+  width: 25px;
+  height: 25px;
+}
+.icon {
+  color: #272727;
+  margin-left: 10px;
+}
+.icon:hover {
   cursor: pointer;
 }

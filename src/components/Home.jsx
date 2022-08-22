@@ -42,7 +42,12 @@ export default function Home() {
           setShowNewListForm={setShowNewListForm}
         />
       )}
-      {showSingleList && <SingleList currentList={currentList} />}
+      {showSingleList && (
+        <SingleList
+          currentList={currentList}
+          setShowSingleList={setShowSingleList}
+        />
+      )}
     </div>
   );
 }

@@ -48,7 +48,7 @@ export default function NewListForm({ addList, setShowNewListForm }) {
         <FontAwesomeIcon
           icon={faXmark}
           onClick={() => setShowNewListForm(false)}
-          className="x-mark-icon"
+          className="icon x-mark-icon"
         />
       </div>
       <form className="new-list-form" onSubmit={handleSubmit}>
