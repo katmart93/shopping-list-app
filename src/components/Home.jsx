@@ -31,6 +31,13 @@ export default function Home() {
     setShowNewListForm(false);
   };
 
+  const closeForm = () => {
+    setTitle("");
+    setDate("");
+    setCurrItems([]);
+    setShowNewListForm(false);
+  };
+
   // ShoppingLists
   const showList = (id) => {
     setCurrentList(lists.filter((currList) => currList.id === id));
@@ -59,7 +66,7 @@ export default function Home() {
       {showNewListForm && (
         <NewListForm
           addList={addList}
-          setShowNewListForm={setShowNewListForm}
+          closeForm={closeForm}
           title={title}
           setTitle={setTitle}
           date={date}

@@ -10,7 +10,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function NewListForm({
   addList,
-  setShowNewListForm,
+  closeForm,
   setTitle,
   title,
   date,
@@ -54,7 +54,7 @@ export default function NewListForm({
       <div className="options-wrapper">
         <FontAwesomeIcon
           icon={faXmark}
-          onClick={() => setShowNewListForm(false)}
+          onClick={closeForm}
           className="icon x-mark-icon"
         />
       </div>
