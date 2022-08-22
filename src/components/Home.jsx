@@ -20,7 +20,6 @@ export default function Home() {
     JSON.parse(localStorage.getItem("SHOPPING_LIST")) || []
   );
 
-  console.log("current list", currentList);
   // saving data in local storage
   useEffect(() => {
     localStorage.setItem("SHOPPING_LIST", JSON.stringify(lists));
@@ -62,7 +61,18 @@ export default function Home() {
     setCurrItems(list.listItems);
     setCurrId(list.id);
   };
-  console.log("currId", currId, "currItems", currItems);
+  console.log(
+    "title:",
+    title,
+    "date:",
+    date,
+    "currId:",
+    currId,
+    "currItems:",
+    currItems,
+    "current list:",
+    currentList
+  );
 
   const removeList = (id) => {
     setLists(lists.filter((list) => list.id !== id));

@@ -25,7 +25,6 @@ export default function NewListForm({
   setShowNewListForm,
 }) {
   const itemInput = useRef();
-  console.log("from new list form", title, date, item, currItems);
 
   const resetForm = () => {
     setTitle("");
