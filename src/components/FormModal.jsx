@@ -1,6 +1,6 @@
 // components
-import Modal from "./Modal";
+import ModalWrapper from "./ModalWrapper";
 
 export default function FormModal({ children }) {
-  return <Modal>{children}</Modal>;
+  return <ModalWrapper>{children}</ModalWrapper>;
 }

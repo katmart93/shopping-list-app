@@ -1,11 +1,11 @@
 // components
-import Modal from "./Modal";
+import ModalWrapper from "./ModalWrapper";
 // styles
 import "./ListModal.css";
 
 export default function ListModal({ currentList }) {
   return (
-    <Modal>
+    <ModalWrapper>
       {currentList.map((list) => (
         <div key={list.id} className="shopping-list">
           <h2>{list.title}</h2>
@@ -17,6 +17,6 @@ export default function ListModal({ currentList }) {
           </ul>
         </div>
       ))}
-    </Modal>
+    </ModalWrapper>
   );
 }
