@@ -39,7 +39,7 @@ export default function Home() {
       <ShoppingLists lists={lists} showList={showList} />
       {showFormModal && (
         <FormModal>
-          <NewListForm addList={addList} />
+          <NewListForm addList={addList} setShowFormModal={setShowFormModal} />
         </FormModal>
       )}
       {showListModal && <ListModal currentList={currentList} />}

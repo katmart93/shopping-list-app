@@ -6,7 +6,7 @@ import "./NewListForm.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export default function NewListForm({ addList }) {
+export default function NewListForm({ addList, setShowFormModal }) {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [item, setItem] = useState("");
@@ -43,7 +43,11 @@ export default function NewListForm({ addList }) {
   return (
     <>
       <div className="x-mark-wrapper">
-        <FontAwesomeIcon icon={faXmark} className="x-mark-icon" />
+        <FontAwesomeIcon
+          icon={faXmark}
+          onClick={() => setShowFormModal(false)}
+          className="x-mark-icon"
+        />
       </div>
       <form className="new-list-form" onSubmit={handleSubmit}>
         <label>
