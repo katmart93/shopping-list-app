@@ -4,7 +4,7 @@
   padding: 2.5rem 0;
 }
 .card {
-  background-color: #f1eff0;
+  background-color: #f4f4f4;
   padding: 2rem;
   max-width: 20rem;
   margin: 0 auto 2rem;
@@ -23,7 +23,7 @@
   font-size: 1.2rem;
 }
 .card button {
-  background-color: #d68faf;
+  background-color: #ad567e;
   border: none;
   border-radius: 25px;
   color: #fff;
@@ -35,7 +35,7 @@
   cursor: pointer;
 }
 .card button:active {
-  background-color: #b35982;
+  background-color: #ae3e77;
 }
 
 @media screen and (min-width: 1024px) {

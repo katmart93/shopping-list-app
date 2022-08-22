@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 .plus-icon:active {
-  color: #6b123a;
+  color: #ae3e77;
 }
 @media screen and (min-width: 1024px) {
   .plus-icon-wrapper {
