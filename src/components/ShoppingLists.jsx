@@ -35,7 +35,7 @@ export default function ShoppingLists({
             ))}
           </ul>
           <p>. . .</p>
-          <button onClick={() => showList(list.id)}>Show</button>
+          <button onClick={() => showList(list)}>Show</button>
         </div>
       ))}
     </div>

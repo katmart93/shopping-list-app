@@ -5,11 +5,18 @@ import "./SingleList.css";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 
-export default function SingleList({ currentList, closeList }) {
-  const [clicked, setClicked] = useState(false);
-  // console.log(clicked);
+export default function SingleList({
+  closeList,
+  currItems,
+  setCurrItems,
+  title,
+  date,
+}) {
+  const removeItem = (item) => {
+    setCurrItems(currItems.filter((currItem) => currItem !== item));
+  };
+
   return (
     <ModalWrapper>
       <div className="options-wrapper">
@@ -19,25 +26,16 @@ export default function SingleList({ currentList, closeList }) {
           className="icon x-mark-icon"
         />
       </div>
-      {currentList.map((list) => (
-        <div key={list.id} className="shopping-list">
-          <h2>{list.title}</h2>
-          <p>{list.date}</p>
-          <ul>
-            {list.listItems.map((listItem) => (
-              <li
-                key={listItem}
-                onClick={() => {
-                  setClicked(!clicked);
-                  console.log(listItem, "is clicked");
-                }}
-              >
-                {listItem}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      <div className="shopping-list"></div>
+      <h2>{title}</h2>
+      <p>{date}</p>
+      <ul>
+        {currItems.map((item) => (
+          <li key={item} onClick={() => removeItem(item)}>
+            {item}
+          </li>
+        ))}
+      </ul>
     </ModalWrapper>
   );
 }

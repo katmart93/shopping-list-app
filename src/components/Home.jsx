@@ -10,7 +10,6 @@ export default function Home() {
   // state
   const [showNewListForm, setShowNewListForm] = useState(false);
   const [showSingleList, setShowSingleList] = useState(false);
-  const [currentList, setCurrentList] = useState([]);
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [currItems, setCurrItems] = useState([]);
@@ -19,7 +18,6 @@ export default function Home() {
   const [lists, setLists] = useState(
     JSON.parse(localStorage.getItem("SHOPPING_LIST")) || []
   );
-
   // saving data in local storage
   useEffect(() => {
     localStorage.setItem("SHOPPING_LIST", JSON.stringify(lists));
@@ -49,9 +47,12 @@ export default function Home() {
   };
 
   // ShoppingLists
-  const showList = (id) => {
-    setCurrentList(lists.filter((currList) => currList.id === id));
+  const showList = (list) => {
     setShowSingleList(true);
+    setTitle(list.title);
+    setDate(list.date);
+    setCurrItems(list.listItems);
+    setCurrId(list.id);
   };
 
   const editList = (list) => {
@@ -61,18 +62,6 @@ export default function Home() {
     setCurrItems(list.listItems);
     setCurrId(list.id);
   };
-  // console.log(
-  //   "title:",
-  //   title,
-  //   "date:",
-  //   date,
-  //   "currId:",
-  //   currId,
-  //   "currItems:",
-  //   currItems,
-  //   "current list:",
-  //   currentList
-  // );
 
   const removeList = (id) => {
     setLists(lists.filter((list) => list.id !== id));
@@ -80,10 +69,14 @@ export default function Home() {
 
   // SingleList
   const closeList = () => {
-    setCurrentList([]);
+    updateList();
+    setTitle("");
+    setDate("");
+    setCurrItems([]);
+    setCurrId(null);
     setShowSingleList(false);
   };
-
+  console.log(title, date, currItems, currId);
   return (
     <div className="home-wrapper">
       <Title />
@@ -113,7 +106,13 @@ export default function Home() {
         />
       )}
       {showSingleList && (
-        <SingleList currentList={currentList} closeList={closeList} />
+        <SingleList
+          closeList={closeList}
+          currItems={currItems}
+          setCurrItems={setCurrItems}
+          title={title}
+          date={date}
+        />
       )}
     </div>
   );
