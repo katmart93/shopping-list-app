@@ -5,6 +5,7 @@ import "./SingleList.css";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export default function SingleList({
   closeList,
@@ -13,10 +14,14 @@ export default function SingleList({
   title,
   date,
 }) {
+  const [removedItems, setRemovedItems] = useState([]);
+
   const removeItem = (item) => {
     setCurrItems(currItems.filter((currItem) => currItem !== item));
+    const removed = currItems.filter((currItem) => currItem === item);
+    setRemovedItems((prev) => [...prev, ...removed]);
   };
-
+  console.log("removed", removedItems);
   return (
     <ModalWrapper>
       <div className="options-wrapper">
@@ -35,6 +40,14 @@ export default function SingleList({
             {item}
           </li>
         ))}
+      </ul>
+      <ul>
+        {removedItems &&
+          removedItems.map((item) => (
+            <li key={item} style={{ color: "red" }}>
+              {item}
+            </li>
+          ))}
       </ul>
     </ModalWrapper>
   );
