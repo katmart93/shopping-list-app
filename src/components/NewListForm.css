@@ -20,6 +20,9 @@
   font-size: 1.1rem;
   padding-bottom: 15px;
 }
+.new-list-form .delete-item-icon {
+  margin-left: 25px;
+}
 .items {
   display: flex;
   align-items: center;
