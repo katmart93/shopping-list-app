@@ -5,9 +5,11 @@ import "./SingleList.css";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export default function SingleList({ currentList, closeList }) {
-  console.log("currentList", currentList[0].listItems);
+  const [clicked, setClicked] = useState(false);
+  // console.log(clicked);
   return (
     <ModalWrapper>
       <div className="options-wrapper">
@@ -23,7 +25,15 @@ export default function SingleList({ currentList, closeList }) {
           <p>{list.date}</p>
           <ul>
             {list.listItems.map((listItem) => (
-              <li key={listItem}>{listItem}</li>
+              <li
+                key={listItem}
+                onClick={() => {
+                  setClicked(!clicked);
+                  console.log(listItem, "is clicked");
+                }}
+              >
+                {listItem}
+              </li>
             ))}
           </ul>
         </div>
