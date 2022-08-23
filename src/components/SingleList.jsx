@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function SingleList({ currentList, closeList }) {
+  console.log("currentList", currentList[0].listItems);
   return (
     <ModalWrapper>
       <div className="options-wrapper">

@@ -61,18 +61,18 @@ export default function Home() {
     setCurrItems(list.listItems);
     setCurrId(list.id);
   };
-  console.log(
-    "title:",
-    title,
-    "date:",
-    date,
-    "currId:",
-    currId,
-    "currItems:",
-    currItems,
-    "current list:",
-    currentList
-  );
+  // console.log(
+  //   "title:",
+  //   title,
+  //   "date:",
+  //   date,
+  //   "currId:",
+  //   currId,
+  //   "currItems:",
+  //   currItems,
+  //   "current list:",
+  //   currentList
+  // );
 
   const removeList = (id) => {
     setLists(lists.filter((list) => list.id !== id));
