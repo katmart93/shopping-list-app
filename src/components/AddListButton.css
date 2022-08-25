@@ -12,3 +12,12 @@
     max-width: 660px;
   }
 }
+@media screen and (min-width: 2560px) {
+  .plus-icon-wrapper {
+    max-width: 1200px;
+  }
+  .plus-icon-wrapper .plus-icon {
+    width: 65px;
+    height: 65px;
+  }
+}

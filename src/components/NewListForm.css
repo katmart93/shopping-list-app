@@ -28,11 +28,30 @@
 .new-list-form .delete-item-icon {
   margin-left: 25px;
 }
-.items {
+.add-items {
   display: flex;
   align-items: center;
 }
-.items button {
+.add-items button {
   font-size: 1rem;
   margin-left: 5px;
+}
+@media screen and (min-width: 2560px) {
+  .new-list-form span {
+    font-size: 2.5rem;
+  }
+  .new-list-form input {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 8px;
+    width: 100%;
+  }
+  .new-list-form ul {
+    font-size: 2rem;
+    padding-bottom: 25px;
+  }
+  .add-items button {
+    font-size: 1.5rem;
+  }
 }

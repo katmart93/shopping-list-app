@@ -13,3 +13,8 @@
     max-width: 1250px;
   }
 }
+@media screen and (min-width: 2560px) {
+  .home-wrapper {
+    max-width: 2000px;
+  }
+}

@@ -24,3 +24,23 @@
 .removed-list-items {
   text-decoration: line-through;
 }
+
+@media screen and (min-width: 2560px) {
+  .shopping-list h2 {
+    font-size: 4rem;
+  }
+  .shopping-list h3 {
+    font-size: 2.5rem;
+    padding-top: 1.5rem;
+  }
+  .shopping-list p {
+    font-size: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .shopping-list ul {
+    font-size: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+}

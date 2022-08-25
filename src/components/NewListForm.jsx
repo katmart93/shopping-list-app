@@ -98,7 +98,7 @@ export default function NewListForm({
           {!/[a-zA-Z]/.test(item) && /\s/.test(item) && (
             <small>Please enter an item!</small>
           )}
-          <div className="items">
+          <div className="add-items">
             <input
               type="text"
               onChange={(e) => setItem(e.target.value)}
