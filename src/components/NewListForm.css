@@ -20,6 +20,11 @@
   font-size: 1.1rem;
   padding-bottom: 15px;
 }
+.new-list-form small {
+  color: #4a0700;
+  display: block;
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+}
 .new-list-form .delete-item-icon {
   margin-left: 25px;
 }

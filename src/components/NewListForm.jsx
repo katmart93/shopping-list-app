@@ -95,6 +95,9 @@ export default function NewListForm({
         </label>
         <label>
           <span>What do you want to buy?</span>
+          {!/[a-zA-Z]/.test(item) && /\s/.test(item) && (
+            <small>Please enter some item!</small>
+          )}
           <div className="items">
             <input
               type="text"
