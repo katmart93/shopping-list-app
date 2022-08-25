@@ -1,6 +1,9 @@
 .shopping-list h2 {
   font-size: 2.5rem;
 }
+.shopping-list h3 {
+  font-size: 1.5rem;
+}
 .shopping-list p {
   font-size: 2rem;
   padding-top: 0.5rem;
