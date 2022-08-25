@@ -40,12 +40,14 @@ export default function SingleList({
       <div className="shopping-list">
         <h2>{title}</h2>
         <p>{date}</p>
-        {currItems.length === 0 && <h3>Shopping done!</h3>}
         {currItems.length > 0 && (
-          <h3>
+          <h3 style={{ color: "#4A0700" }}>
             You have {currItems.length}{" "}
             {currItems.length > 1 ? `items` : `item`} to buy
           </h3>
+        )}
+        {currItems.length === 0 && (
+          <h3 style={{ color: "#0d721f" }}>Shopping done!</h3>
         )}
         <ul className="current-list-items">
           {currItems.map((item) => (
