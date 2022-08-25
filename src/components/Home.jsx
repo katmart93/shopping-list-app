@@ -50,6 +50,7 @@ export default function Home() {
     setTitle("");
     setDate("");
     setCurrItems([]);
+    setRemovedItems([]);
     setCurrId(null);
     setShowNewListForm(false);
   };
@@ -123,6 +124,7 @@ export default function Home() {
           setCurrId={setCurrId}
           setShowNewListForm={setShowNewListForm}
           removedItems={removedItems}
+          setRemovedItems={setRemovedItems}
         />
       )}
       {showSingleList && (

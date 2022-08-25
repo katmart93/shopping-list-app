@@ -24,6 +24,7 @@ export default function NewListForm({
   setCurrId,
   setShowNewListForm,
   removedItems,
+  setRemovedItems,
 }) {
   const itemInput = useRef();
 
@@ -60,6 +61,7 @@ export default function NewListForm({
 
   const removeItem = (item) => {
     setCurrItems(currItems.filter((currItem) => currItem !== item));
+    setRemovedItems(removedItems.filter((removedIt) => removedIt !== item));
   };
 
   return (
@@ -103,6 +105,7 @@ export default function NewListForm({
           </div>
         </label>
         <ul>
+          <span>Items to buy:</span>
           {currItems.map((item) => (
             <li key={item}>
               {item}
@@ -114,6 +117,21 @@ export default function NewListForm({
             </li>
           ))}
         </ul>
+        {currId !== null && (
+          <ul>
+            <span>Items bought:</span>
+            {removedItems.map((item) => (
+              <li key={item}>
+                {item}
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  className="icon delete-item-icon"
+                  onClick={() => removeItem(item)}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
         <button>{currId !== null ? "Update" : "Create"}</button>
       </form>
     </ModalWrapper>
