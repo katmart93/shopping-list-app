@@ -13,6 +13,12 @@ export default function ShoppingLists({
 }) {
   return (
     <div className="shopping-lists-wrapper">
+      {lists.length === 0 && (
+        <div>
+          <h2>You don't have any shopping lists yet.</h2>
+          <h3>Click on the plus icon to create a list.</h3>
+        </div>
+      )}
       {lists.map((list) => (
         <div key={list.id} className="card">
           <div className="list-icons-wrapper">
