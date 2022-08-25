@@ -43,37 +43,41 @@ export default function Home() {
     );
   };
 
+  const onOpenModal = (list) => {
+    setTitle(list.title);
+    setDate(list.date);
+    setCurrItems(list.listItems);
+    setRemovedItems(list.removedListItems);
+    setCurrId(list.id);
+  };
+
+  const onCloseModal = () => {
+    setTitle("");
+    setDate("");
+    setCurrItems([]);
+    setRemovedItems([]);
+    setCurrId(null);
+  };
+
   // NewListForm
   const addList = (list) => {
     setLists((prevLists) => [...prevLists, list]);
   };
 
   const closeForm = () => {
-    setTitle("");
-    setDate("");
-    setCurrItems([]);
-    setRemovedItems([]);
-    setCurrId(null);
+    onCloseModal();
     setShowNewListForm(false);
   };
 
   // ShoppingLists
   const showList = (list) => {
     setShowSingleList(true);
-    setTitle(list.title);
-    setDate(list.date);
-    setCurrItems(list.listItems);
-    setRemovedItems(list.removedListItems);
-    setCurrId(list.id);
+    onOpenModal(list);
   };
 
   const editList = (list) => {
     setShowNewListForm(true);
-    setTitle(list.title);
-    setDate(list.date);
-    setCurrItems(list.listItems);
-    setRemovedItems(list.removedListItems);
-    setCurrId(list.id);
+    onOpenModal(list);
   };
 
   const removeList = (id) => {
@@ -83,11 +87,7 @@ export default function Home() {
   // SingleList
   const closeList = () => {
     updateList();
-    setTitle("");
-    setDate("");
-    setCurrItems([]);
-    setRemovedItems([]);
-    setCurrId(null);
+    onCloseModal();
     setShowSingleList(false);
   };
   console.log(

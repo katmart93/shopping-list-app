@@ -32,6 +32,7 @@ export default function NewListForm({
     setTitle("");
     setDate("");
     setCurrItems([]);
+    setRemovedItems([]);
     setCurrId(null);
   };
   const handleSubmit = (e) => {
@@ -58,7 +59,6 @@ export default function NewListForm({
     setItem("");
     itemInput.current.focus();
   };
-  console.log("current items", currItems, "removed items", removedItems);
 
   const removeItem = (item) => {
     setCurrItems(currItems.filter((currItem) => currItem !== item));
@@ -96,7 +96,7 @@ export default function NewListForm({
         <label>
           <span>What do you want to buy?</span>
           {!/[a-zA-Z]/.test(item) && /\s/.test(item) && (
-            <small>Please enter some item!</small>
+            <small>Please enter an item!</small>
           )}
           <div className="items">
             <input

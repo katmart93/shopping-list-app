@@ -27,7 +27,6 @@ export default function SingleList({
     setCurrItems((prev) => [...prev, ...restored]);
   };
 
-  console.log("removed", removedItems, "current", currItems);
   return (
     <ModalWrapper>
       <div className="options-wrapper">
