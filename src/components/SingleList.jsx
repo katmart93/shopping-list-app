@@ -37,28 +37,25 @@ export default function SingleList({
           className="icon x-mark-icon"
         />
       </div>
-      <div className="shopping-list"></div>
-      <h2>{title}</h2>
-      <p>{date}</p>
-      <ul>
-        {currItems.map((item) => (
-          <li key={item} onClick={() => removeItem(item)}>
-            {item}
-          </li>
-        ))}
-      </ul>
-      <ul>
-        {removedItems &&
-          removedItems.map((item) => (
-            <li
-              key={item}
-              style={{ color: "red" }}
-              onClick={() => restoreItem(item)}
-            >
+      <div className="shopping-list">
+        <h2>{title}</h2>
+        <p>{date}</p>
+        <ul className="current-list-items">
+          {currItems.map((item) => (
+            <li key={item} onClick={() => removeItem(item)}>
               {item}
             </li>
           ))}
-      </ul>
+        </ul>
+        <ul className="removed-list-items">
+          {removedItems &&
+            removedItems.map((item) => (
+              <li key={item} onClick={() => restoreItem(item)}>
+                {item}
+              </li>
+            ))}
+        </ul>
+      </div>
     </ModalWrapper>
   );
 }
