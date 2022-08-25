@@ -5,7 +5,6 @@ import "./SingleList.css";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 
 export default function SingleList({
   closeList,
@@ -13,9 +12,9 @@ export default function SingleList({
   setCurrItems,
   title,
   date,
+  removedItems,
+  setRemovedItems,
 }) {
-  const [removedItems, setRemovedItems] = useState([]);
-
   const removeItem = (item) => {
     setCurrItems(currItems.filter((currItem) => currItem !== item));
     const removed = currItems.filter((currItem) => currItem === item);

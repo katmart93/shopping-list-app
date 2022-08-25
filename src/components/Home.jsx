@@ -13,6 +13,7 @@ export default function Home() {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [currItems, setCurrItems] = useState([]);
+  const [removedItems, setRemovedItems] = useState([]);
   const [currId, setCurrId] = useState(null);
   const [item, setItem] = useState("");
   const [lists, setLists] = useState(
@@ -112,6 +113,8 @@ export default function Home() {
           setCurrItems={setCurrItems}
           title={title}
           date={date}
+          removedItems={removedItems}
+          setRemovedItems={setRemovedItems}
         />
       )}
     </div>
