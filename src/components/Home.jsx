@@ -5,6 +5,8 @@ import AddListButton from "./AddListButton";
 import Title from "./Title";
 import NewListForm from "./NewListForm";
 import SingleList from "./SingleList";
+// styles
+import "./Home.css";
 
 export default function Home() {
   // state
