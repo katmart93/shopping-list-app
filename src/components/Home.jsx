@@ -24,19 +24,26 @@ export default function Home() {
     localStorage.setItem("SHOPPING_LIST", JSON.stringify(lists));
   }, [lists]);
 
-  // NewListForm
-  const addList = (list) => {
-    setLists((prevLists) => [...prevLists, list]);
-  };
-
+  // reusable
   const updateList = () => {
     setLists(
       lists.map((list) =>
         list.id === currId
-          ? { title: title, date: date, id: list.id, listItems: currItems }
+          ? {
+              title: title,
+              date: date,
+              id: list.id,
+              listItems: currItems,
+              removedListItems: removedItems,
+            }
           : list
       )
     );
+  };
+
+  // NewListForm
+  const addList = (list) => {
+    setLists((prevLists) => [...prevLists, list]);
   };
 
   const closeForm = () => {
@@ -53,6 +60,7 @@ export default function Home() {
     setTitle(list.title);
     setDate(list.date);
     setCurrItems(list.listItems);
+    setRemovedItems(list.removedListItems);
     setCurrId(list.id);
   };
 
@@ -74,10 +82,19 @@ export default function Home() {
     setTitle("");
     setDate("");
     setCurrItems([]);
+    setRemovedItems([]);
     setCurrId(null);
     setShowSingleList(false);
   };
-  console.log(title, date, currItems, currId);
+  console.log(
+    title,
+    date,
+    "current",
+    currItems,
+    currId,
+    "removed",
+    removedItems
+  );
   return (
     <div className="home-wrapper">
       <Title />
@@ -104,6 +121,7 @@ export default function Home() {
           currId={currId}
           setCurrId={setCurrId}
           setShowNewListForm={setShowNewListForm}
+          removedItems={removedItems}
         />
       )}
       {showSingleList && (

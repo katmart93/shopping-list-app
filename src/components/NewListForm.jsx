@@ -23,6 +23,7 @@ export default function NewListForm({
   currId,
   setCurrId,
   setShowNewListForm,
+  removedItems,
 }) {
   const itemInput = useRef();
 
@@ -40,6 +41,7 @@ export default function NewListForm({
       date: date,
       id: uuidv4(),
       listItems: currItems,
+      removedListItems: [],
     };
 
     currId ? updateList() : addList(list);
