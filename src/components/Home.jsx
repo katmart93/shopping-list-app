@@ -90,15 +90,7 @@ export default function Home() {
     onCloseModal();
     setShowSingleList(false);
   };
-  console.log(
-    title,
-    date,
-    "current",
-    currItems,
-    currId,
-    "removed",
-    removedItems
-  );
+
   return (
     <div className="home-wrapper">
       <Title />
