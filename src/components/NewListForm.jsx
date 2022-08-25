@@ -56,7 +56,7 @@ export default function NewListForm({
     setItem("");
     itemInput.current.focus();
   };
-  console.log("current items", currItems);
+  console.log("current items", currItems, "removed items", removedItems);
 
   const removeItem = (item) => {
     setCurrItems(currItems.filter((currItem) => currItem !== item));

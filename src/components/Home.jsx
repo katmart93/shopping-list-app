@@ -69,6 +69,7 @@ export default function Home() {
     setTitle(list.title);
     setDate(list.date);
     setCurrItems(list.listItems);
+    setRemovedItems(list.removedListItems);
     setCurrId(list.id);
   };
 
