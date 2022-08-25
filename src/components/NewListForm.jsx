@@ -53,7 +53,8 @@ export default function NewListForm({
   const addItem = (e) => {
     e.preventDefault();
 
-    setCurrItems((prevItems) => [...prevItems, item]);
+    if (item.trim() === "") return;
+    setCurrItems((prevItems) => [...prevItems, item.trim()]);
     setItem("");
     itemInput.current.focus();
   };
