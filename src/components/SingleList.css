@@ -15,6 +15,9 @@
   padding-top: 1rem;
   padding-bottom: 0.5rem;
 }
+.shopping-list ul li:hover {
+  cursor: pointer;
+}
 .current-list-items {
   color: #ad567e;
 }
