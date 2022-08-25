@@ -21,7 +21,14 @@ export default function SingleList({
     const removed = currItems.filter((currItem) => currItem === item);
     setRemovedItems((prev) => [...prev, ...removed]);
   };
-  console.log("removed", removedItems);
+
+  const restoreItem = (item) => {
+    setRemovedItems(removedItems.filter((removedItem) => removedItem !== item));
+    const restored = removedItems.filter((removedItem) => removedItem === item);
+    setCurrItems((prev) => [...prev, ...restored]);
+  };
+
+  console.log("removed", removedItems, "current", currItems);
   return (
     <ModalWrapper>
       <div className="options-wrapper">
@@ -44,7 +51,11 @@ export default function SingleList({
       <ul>
         {removedItems &&
           removedItems.map((item) => (
-            <li key={item} style={{ color: "red" }}>
+            <li
+              key={item}
+              style={{ color: "red" }}
+              onClick={() => restoreItem(item)}
+            >
               {item}
             </li>
           ))}
