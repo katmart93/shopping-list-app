@@ -6,4 +6,4 @@ Thi is a CRUD application that allows the user to create, delete and edit shoppi
 
 - React 18.2
 - Responsive web design - mobile-first approach applied
-- Local storage utilized
+- uses local storage
