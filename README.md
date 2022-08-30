@@ -5,8 +5,12 @@ Thi is a CRUD application that allows the user to create, delete and edit shoppi
 ## Technologies
 
 - React 18.2
+- CSS
 - Responsive web design - mobile-first approach applied
 - Uses local storage
+
+## Link to netlify
+https://endearing-dasik-3c4684.netlify.app/
 
 ## Images
 
