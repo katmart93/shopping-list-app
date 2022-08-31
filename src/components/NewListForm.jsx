@@ -38,6 +38,8 @@ export default function NewListForm({
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (title.trim() === "") return;
+
     const list = {
       title: title,
       date: date,
@@ -77,6 +79,7 @@ export default function NewListForm({
       <form className="new-list-form" onSubmit={handleSubmit}>
         <label>
           <span>List title:</span>
+          {title.trim() === "" && <small>Please enter a title!</small>}
           <input
             type="text"
             onChange={(e) => setTitle(e.target.value)}
