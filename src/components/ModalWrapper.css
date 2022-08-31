@@ -4,8 +4,6 @@
   top: 0;
   left: 0;
   position: fixed;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 .modal-backdrop::before {
   background: rgba(20, 20, 20, 0.5);
@@ -31,6 +29,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .modal-backdrop {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
   .modal-wrapper {
     max-width: 500px;
   }
