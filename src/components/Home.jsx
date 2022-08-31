@@ -81,7 +81,9 @@ export default function Home() {
   };
 
   const removeList = (id) => {
-    setLists(lists.filter((list) => list.id !== id));
+    if (window.confirm("Are you sure you want to delete this list?")) {
+      setLists(lists.filter((list) => list.id !== id));
+    } else return;
   };
 
   // SingleList
