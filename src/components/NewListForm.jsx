@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 // components
 import ModalWrapper from "./ModalWrapper";
@@ -26,6 +26,7 @@ export default function NewListForm({
   removedItems,
   setRemovedItems,
 }) {
+  const [itemsMessage, setItemsMessage] = useState(false);
   const itemInput = useRef();
 
   const resetForm = () => {
@@ -35,10 +36,14 @@ export default function NewListForm({
     setRemovedItems([]);
     setCurrId(null);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    setItemsMessage(true);
     if (title.trim() === "") return;
+    if (currItems.length <= 0) return;
+    if (date === "") return;
 
     const list = {
       title: title,
@@ -57,7 +62,7 @@ export default function NewListForm({
     e.preventDefault();
 
     if (item.trim() === "") return;
-    setCurrItems((prevItems) => [...prevItems, item.trim()]);
+    setCurrItems((prevItems) => [...prevItems, item.toLowerCase().trim()]);
     setItem("");
     itemInput.current.focus();
   };
@@ -79,7 +84,9 @@ export default function NewListForm({
       <form className="new-list-form" onSubmit={handleSubmit}>
         <label>
           <span>List title:</span>
-          {title.trim() === "" && <small>Please enter a title!</small>}
+          {!/[a-zA-Z]/.test(title) && /\s/.test(title) && (
+            <small>Please enter a title!</small>
+          )}
           <input
             type="text"
             onChange={(e) => setTitle(e.target.value)}
@@ -113,6 +120,11 @@ export default function NewListForm({
         </label>
         <ul>
           <span>Items to buy:</span>
+          {itemsMessage && currItems.length <= 0 && (
+            <small>
+              You can't create an empty list! Please enter some items.
+            </small>
+          )}
           {currItems.map((item) => (
             <li key={item}>
               {item}
