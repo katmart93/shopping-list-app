@@ -46,7 +46,7 @@ export default function NewListForm({
     if (date === "") return;
 
     const list = {
-      title: title,
+      title: title.trim(),
       date: date,
       id: uuidv4(),
       listItems: currItems,
